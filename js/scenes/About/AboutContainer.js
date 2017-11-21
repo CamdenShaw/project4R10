@@ -1,11 +1,12 @@
 import React, { Component } from 'react'
-import { ActivityIndicator, FlatList, View } from 'react-native'
+import { ActivityIndicator, FlatList, View, ScrollView } from 'react-native'
 import propTypes from 'prop-types'
 import { styles } from './styles'
 
 import About from './About'
 
 class AboutContainer extends Component {
+    static route = {navigationBar: {title: 'About'}}
     state = {
         isLoading: true
     }
@@ -25,7 +26,7 @@ class AboutContainer extends Component {
         const { data, isLoading } = this.state
        return isLoading ? 
                 <ActivityIndicator /> :
-                <About data={data} />
+                <ScrollView><About data={data} /></ScrollView>
     }
 }
 

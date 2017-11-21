@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colors } from '../../config/styles'
+import { colours } from '../../config/styles'
 
 export const styles = StyleSheet.create({
     image: {
@@ -13,6 +13,6 @@ export const styles = StyleSheet.create({
     separator: {
         flex: 1,
         height: StyleSheet.hairlineWidth,
-        backgroundColor: colors.mediumGrey
+        backgroundColor: colours.mediumGrey
     }
 })
