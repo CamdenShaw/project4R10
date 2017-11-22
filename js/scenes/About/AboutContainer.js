@@ -1,33 +1,34 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, FlatList, View, ScrollView } from 'react-native'
+import { connect } from 'react-redux'
 import propTypes from 'prop-types'
+import { getCodeItems } from '../../redux/modules/conduct'
 import { styles } from './styles'
 
 import About from './About'
 
 class AboutContainer extends Component {
     static route = {navigationBar: {title: 'About'}}
-    state = {
-        isLoading: true
-    }
 
     // static propTypes = {}
 
     componentDidMount() {
-        fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
-            .then(response => response.json())
-            .then(data => {
-                this.setState({data, isLoading:false})
-            })
-            .catch(error => console.log('Error fetching json...', error))
+        this.props.dispatch(getCodeItems())
     }
 
     render() {
-        const { data, isLoading } = this.state
-       return isLoading ? 
+        const { codeOfConduct, isLoading } = this.props
+        return isLoading ? 
                 <ActivityIndicator /> :
-                <ScrollView><About data={data} /></ScrollView>
+                <ScrollView><About data={codeOfConduct} /></ScrollView>
     }
 }
 
-export default AboutContainer;
+const mapStateToProps = state => {
+    return {
+        codeOfConduct: state.conduct.codeOfConduct,
+        isLoading: state.conduct.isLoading
+    }
+}
+
+export default connect(mapStateToProps)(AboutContainer)

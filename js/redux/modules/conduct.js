@@ -15,13 +15,13 @@ const getCodeOfConductFail = (error) => {
     }
 }
 // CREATE SOME ACTION CREATORS
-const getCodeItems = () => {
+export const getCodeItems = () => {
     return (dispatch) => {
         dispatch(getCodeOfConductBegin());
-        return fetch(`$(https://r10app-95fea.firebaseio.com/code_of_conduct.json)`)
+        fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
             .then(resp => resp.json())
             .then(items => {
-                return getCodeOfConductSuccess(items)
+                dispatch(getCodeOfConductSuccess(items))
             })
             .catch(err => {
                 dispatch(getCodeOfConductSuccess(err))
@@ -30,22 +30,29 @@ const getCodeItems = () => {
 }
 // MAKE AN ASYNC ACTION CREATOR
 const initialState = {
-    codeOfConduct: []
+    error: "",
+    codeOfConduct: [],
+    isLoading: false
 }
 // CREATE AND EXPORT YOUR REDUCER
 export default (state = initialState, action) => {
     switch(action.type) {
         case 'GET_CODE_OF_CONDUCT_BEGIN':
             return {
-                ...state
+                ...state,
+                isLoading: true
             }
         case 'GET_CODE_OF_CONDUCT_SUCCESS':
             return {
-                ...state
+                ...state,
+                codeOfConduct: action.items,
+                isLoading: false
             }
         case 'GET_CODE_OF_CONDUCT_FAIL':
             return {
-                ...state
+                ...state,
+                error: action.error,
+                isLoading: false
             }
         default:
             return state
