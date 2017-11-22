@@ -1,4 +1,8 @@
 import React, { Component } from 'react';
+import{ NavigationActions } from '@expo/ex-navigation'
+import Store from '../redux/store'
+import Router from '../navigation/routes'
+import moment from 'moment'
 
 class ScheduleHelpers extends Component {
     formatObject = (data) => {
@@ -15,4 +19,22 @@ class ScheduleHelpers extends Component {
     }
 }
 
-export { ScheduleHelpers }
+const goToSession = (currentNavigatorUID, sessionData) => {
+    Store.dispatch(NavigationActions.push(
+        currentNavigatorUID,
+        Router.getRoute('session', { sessionData })
+    ))
+}
+
+const goToSpeaker = (currentNavigatorUID, sessionData) => {
+    Store.dispatch(NavigationActions.push(
+        currentNavigatorUID,
+        Router.getRoute('speaker', { sessionData })
+    ))
+}
+
+const timeConvert = (unixTime) => {
+    return moment.unix(unixTime).format("hh:mm a")
+}
+
+export { ScheduleHelpers, goToSession, goToSpeaker, timeConvert }

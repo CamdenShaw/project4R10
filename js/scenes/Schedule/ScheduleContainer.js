@@ -14,16 +14,16 @@ class ScheduleContainer extends Component {
     }
 
     render() {
-        console.log(this.props)
-        const { schedule, isLoading } = this.props
+        const { schedule, isLoading, navigation } = this.props
         return isLoading ?
             <ActivityIndicator /> :
-            <ScrollView><EventsList data={schedule} /></ScrollView>
+            <ScrollView><EventsList data={schedule} navigatorUID={navigation} /></ScrollView>
     }
 }
 
 const mapStateToProps = state => {
     return {
+        navigation: state.navigation.currentNavigatorUID,
         schedule: state.schedule.schedule,
         isLoading: state.schedule.isLoading
     }

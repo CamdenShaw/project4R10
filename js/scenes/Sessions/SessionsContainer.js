@@ -1,29 +1,22 @@
 import React, { Component } from 'react';
-import { connect } from 'reac-redux'
+import { connect } from 'react-redux'
 import { ActivityIndicator, ScrollView } from 'react-native'
 import Sessions from './Sessions'
 import propTypes from 'prop-types'
 import { getSessions } from '../../redux/modules/sessions'
-import MyAppText from '../../components/text/MyAppText'
 
 class SessionsContainer extends Component {
-    static route = {navigationBar:{title: "Sessions"}}
-
-    componentDidMount() {
-        this.props.dispatch(getSessions())
-    }
+    static route = {navigationBar:{title(params) {return `${params}`}}}
 
     render() {
-        const { sessions, isLoading } = this.props
-        return isLoading ?
-            <ActivityIndicator /> :
-            <ScrollView><Sessions data={sessions} /></ScrollView>
+        const { sessionData, navigation } = this.props
+        return <ScrollView><Sessions item={sessionData} navigatorUID={navigation} /></ScrollView>
     }
 }
 
 const mapStateToProps = state => {
     return {
-        sessions: state.sessions.sessions,
+        navigation: state.navigation.currentNavigatorUID,
         isLoading: state.sessions.isLoading
     }
 }
