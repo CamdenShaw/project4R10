@@ -1,54 +1,54 @@
 
-const getSessionsBegin = () => {
-    return { type: "GET_SESSIONS_BEGIN"}
+const getScheduleBegin = () => {
+    return { type: "GET_SCHEDULE_BEGIN"}
 }
-const getSessionsSuccess = (items) => {
+const getScheduleSuccess = (items) => {
     return {
-        type: "GET_SESSIONS_SUCCESS",
+        type: "GET_SCHEDULE_SUCCESS",
         items
         }
 }
-const getSessionsFail = (error) => {
+const getScheduleFail = (error) => {
     return {
-        type: "GET_SESSIONS_FAIL",
+        type: "GET_SCHEDULE_FAIL",
         error
     }
 }
 
-export const getSessions = () => {
+export const getSchedule = () => {
     return (dispatch) => {
-        dispatch(getSessionsBegin());
+        dispatch(getScheduleBegin());
         fetch('https://r10app-95fea.firebaseio.com/sessions.json')
             .then(resp => resp.json())
             .then(items => {
-                dispatch(getSessionsSuccess(items))
+                dispatch(getScheduleSuccess(items))
             })
             .catch(err => {
-                dispatch(getSessionsFail(err))
+                dispatch(getScheduleFail(err))
             })
     }
 }
 
 const initialState = {
     error: "",
-    sessions: [],
+    schedule: [],
     isLoading: false
 }
 
 export default (state = initialState, action) => {
     switch(action.type) {
-        case 'GET_SESSIONS_BEGIN':
+        case 'GET_SCHEDULE_BEGIN':
             return {
                 ...state,
                 isLoading: true
             }
-        case 'GET_SESSIONS_SUCCESS':
+        case 'GET_SCHEDULE_SUCCESS':
             return {
                 ...state,
-                sessions: action.items,
+                schedule: action.items,
                 isLoading: false
             }
-        case 'GET_SESSIONS_FAIL':
+        case 'GET_SCHEDULE_FAIL':
             return {
                 ...state,
                 error: action.error,

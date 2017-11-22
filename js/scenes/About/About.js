@@ -1,5 +1,5 @@
 import React from 'react'
-import { Text, View, Image} from 'react-native'
+import { View, Image } from 'react-native'
 import propTypes from 'prop-types'
 import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
