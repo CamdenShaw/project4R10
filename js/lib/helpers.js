@@ -26,10 +26,10 @@ const goToSession = (currentNavigatorUID, sessionData) => {
     ))
 }
 
-const goToSpeaker = (currentNavigatorUID, sessionData) => {
+const goToSpeaker = (speakerData) => {
     Store.dispatch(NavigationActions.push(
-        currentNavigatorUID,
-        Router.getRoute('speaker', { sessionData })
+        'root',
+        Router.getRoute('speaker', { speakerData })
     ))
 }
 

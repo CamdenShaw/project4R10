@@ -1,4 +1,3 @@
-
 const getSessionsBegin = () => {
     return { type: "GET_SESSIONS_BEGIN"}
 }
@@ -17,7 +16,7 @@ const getSessionsFail = (error) => {
 
 export const getSessions = () => {
     return (dispatch) => {
-        dispatch(getSessionsBegin());
+        dispatch(getSessionsBegin())
         fetch('https://r10app-95fea.firebaseio.com/sessions.json')
             .then(resp => resp.json())
             .then(items => {

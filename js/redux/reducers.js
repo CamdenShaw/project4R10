@@ -3,13 +3,15 @@ import { NavigationReducer } from '@expo/ex-navigation'
 import conduct from './modules/conduct'
 import sessions from './modules/sessions'
 import schedule from './modules/schedule'
+import speaker from './modules/speaker'
 
 const rootReducers =
     combineReducers({
         navigation: NavigationReducer,
         conduct: conduct,
         sessions: sessions,
-        schedule: schedule
+        schedule: schedule,
+        speaker: speaker
     })
 
 export default rootReducers
