@@ -4,7 +4,7 @@ import conduct from './modules/conduct'
 import sessions from './modules/sessions'
 import schedule from './modules/schedule'
 import speaker from './modules/speaker'
-import favs from './modules/speaker'
+import favs from './modules/favs'
 
 const rootReducers =
     combineReducers({
