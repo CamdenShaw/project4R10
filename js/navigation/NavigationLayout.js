@@ -42,6 +42,17 @@ class NavBar extends Component {
                         navigatorUID="about"
                         initialRoute={Router.getRoute('about')}
                     />
+                </TabItem><TabItem
+                    id="Favs"
+                    title="Favs"
+                    renderTitle={this.renderTitle}
+                    selectedStyle={{backgroundColor: "purple"}}
+                    renderIcon={isSelected => this.renderIcon("ios-heart-outline", isSelected)}>
+                    <StackNavigation 
+                        id="fav"
+                        navigatorUID="fav"
+                        initialRoute={Router.getRoute('fav')}
+                    />
                 </TabItem>
             </TabNavigation>
         );

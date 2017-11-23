@@ -20,6 +20,7 @@ const Sessions = ({item, navigatorUID, speaker}) => {
                     <Text>{speaker.name}</Text>
                 </View>
             </TouchableHighlight>
+            <Text>Add to Favs</Text>
         </View>
     )
 }

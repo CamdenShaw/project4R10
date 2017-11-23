@@ -4,6 +4,7 @@ import conduct from './modules/conduct'
 import sessions from './modules/sessions'
 import schedule from './modules/schedule'
 import speaker from './modules/speaker'
+import favs from './modules/speaker'
 
 const rootReducers =
     combineReducers({
@@ -11,7 +12,8 @@ const rootReducers =
         conduct: conduct,
         sessions: sessions,
         schedule: schedule,
-        speaker: speaker
+        speaker: speaker,
+        favs: favs
     })
 
 export default rootReducers
