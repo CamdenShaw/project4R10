@@ -17,7 +17,7 @@ class ScheduleContainer extends Component {
         const { schedule, isLoading, navigation } = this.props
         return isLoading ?
             <ActivityIndicator /> :
-            <ScrollView><EventsList data={schedule} navigatorUID={navigation}/></ScrollView>
+            <ScrollView><EventsList data={schedule} navigatorUID={navigation} /></ScrollView>
     }
 }
 
