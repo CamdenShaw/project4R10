@@ -14,7 +14,6 @@ class NavBar extends Component {
         }
     }
     render() {
-        let isSelected = true
         return (
             <TabNavigation
                 initialTab="schedule"
@@ -42,16 +41,17 @@ class NavBar extends Component {
                         navigatorUID="about"
                         initialRoute={Router.getRoute('about')}
                     />
-                </TabItem><TabItem
-                    id="Favs"
+                </TabItem>
+                <TabItem
+                    id="favs"
                     title="Favs"
                     renderTitle={this.renderTitle}
                     selectedStyle={{backgroundColor: "purple"}}
                     renderIcon={isSelected => this.renderIcon("ios-heart-outline", isSelected)}>
                     <StackNavigation 
-                        id="fav"
-                        navigatorUID="fav"
-                        initialRoute={Router.getRoute('fav')}
+                        id="favs"
+                        navigatorUID="favs"
+                        initialRoute={Router.getRoute('favs')}
                     />
                 </TabItem>
             </TabNavigation>

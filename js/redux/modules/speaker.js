@@ -20,9 +20,9 @@ const getSpeakerFail = (error) => (
 )
 
 export const getSpeaker = (speakerId) => (
-    async dispatch => {
+    dispatch => {
         dispatch(getSpeakerBegin())
-        await fetch(`https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22${speakerId}%22`)
+        fetch(`https://r10app-95fea.firebaseio.com/speakers.json?orderBy=%22speaker_id%22&equalTo=%22${speakerId}%22`)
             .then(resp => resp.json())
             .then(items => {
                 dispatch(getSpeakerSuccess(formatObject(items)))
