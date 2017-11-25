@@ -16,14 +16,9 @@ class SessionsContainer extends Component {
     componentWillMount() {
         this.props.dispatch(getSpeaker(this.props.sessionData.speaker))
         realm.addListener('change', this.updateRealm)
-        console.log(this.props.sessionData)
-        console.log(this.faved)
     }
 
     updateRealm = () => this.forceUpdate()
-
-    componentDidMount() {
-    }
 
     componentWillUnmount() {
         realm.removeListener('change', this.updateRealm)
@@ -32,7 +27,6 @@ class SessionsContainer extends Component {
     render() {
         const { sessionData, navigation, isLoading, speaker } = this.props
         if(!isLoading) { this.faved = queryFavs(sessionData.session_id)}
-        console.log(this.faved)
         return isLoading ? 
             <ActivityIndicator /> : 
             <ScrollView><Sessions item={sessionData} navigatorUID={navigation} speaker={speaker} faved={this.faved} /></ScrollView>

@@ -10,7 +10,6 @@ import Heart from '../../components/icons/heart'
 
 const Sessions = ({item, navigatorUID, speaker, faved}) => {
     let id = item.session_id
-    console.log('faved', faved, faved[0], id, speaker)
     return (
         <View key={id}>
             <Heart location={item.location} />
@@ -34,7 +33,6 @@ const Sessions = ({item, navigatorUID, speaker, faved}) => {
 }
 
 const dealWithFav = (id, faved) => {
-    console.log(id)
     faved[0] ? deleteFav(id) : createFav(id)
 }
 

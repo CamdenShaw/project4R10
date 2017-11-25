@@ -5,7 +5,7 @@ import propTypes from 'prop-types'
 import EventsList from '../../components/eventsList'
 import { getSchedule } from '../../redux/modules/schedule'
 import MyAppText from '../../components/text/MyAppText'
-import { queryFavs } from '../../config/module'
+import { realm, queryFavs } from '../../config/module'
 
 class ScheduleContainer extends Component {
     static route = {navigationBar:{title: "Schedule"}}
@@ -19,16 +19,16 @@ class ScheduleContainer extends Component {
         let favIds = queryFavs()
         favIds.forEach(id => {
             let x = this.props.schedule.filter(session => {
-                console.log(session.session_id, id.id)
                 session.session_id === id.id  && this.favs.push(session)
             })
         })
-        console.log(this.favs)
+        realm.addListener('change', this.updateRealm)
     }
+
+    updateRealm = () => this.forceUpdate()
 
     render() {
         const { schedule, isLoading, navigation } = this.props
-        console.log(this.favs)
         return isLoading ?
             <ActivityIndicator /> :
             <ScrollView><EventsList data={this.favs} navigatorUID={navigation} /></ScrollView>
