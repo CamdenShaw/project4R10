@@ -50,7 +50,7 @@ class CodeItem extends Component {
                     this.state.opacity,
                     {
                         toValue: 0,
-                        duration:500,
+                        duration:400,
                         easing: Easing.poly
                     }
                 ),
@@ -58,7 +58,7 @@ class CodeItem extends Component {
                     this.state.rotate,
                     {
                         toValue: x,
-                        duration: 500,
+                        duration: 400,
                         easing: Easing.linear
                     }
                 ),
@@ -73,7 +73,7 @@ class CodeItem extends Component {
                 this.state.rotate,
                 {
                     toValue: 2,
-                    duration: 500,
+                    duration: 400,
                     easing: Easing.linear
                 }
             ),
@@ -81,7 +81,7 @@ class CodeItem extends Component {
                 this.state.opacity,
                 {
                     toValue: 1,
-                    duration: 500,
+                    duration: 400,
                     easing: Easing.poly
                 }
             )
@@ -114,7 +114,7 @@ class CodeItem extends Component {
     render() {
         const spin = this.state.rotate.interpolate({
             inputRange: [0, 2],
-            outputRange: ['0deg', '720deg']
+            outputRange: ['0deg', '540deg']
         })
         return (
             <View key={this.props.thisKey}>

@@ -22,7 +22,7 @@ export default class App extends Component {
       <Provider store={Store}>
         <NavigationProvider style={{display: 'none'}} context={navigationContext}>
           <StackNavigation 
-            style={{display: 'none'}}
+            // style={{display: 'none'}}
             navigatorUID="root"
             id="root"
             initialRoute={Router.getRoute('layout')}

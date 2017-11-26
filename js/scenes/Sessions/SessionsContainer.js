@@ -36,7 +36,7 @@ class SessionsContainer extends Component {
 const mapStateToProps = state => {
     return {
         navigation: state.navigation.currentNavigatorUID,
-        isLoading: state.sessions.isLoading,
+        isLoading: state.speaker.isLoading,
         speaker: state.speaker.speaker
     }
 }
