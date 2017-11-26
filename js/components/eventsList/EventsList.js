@@ -5,8 +5,9 @@ import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
 import { ScheduleHelpers, goToSession, timeConvert } from '../../lib/helpers'
 import Heart from '../icons/heart'
+import { queryFavs } from '../../config/module'
 
-const EventsList = ({data, navigatorUID}) => {
+const EventsList = ({data, navigatorUID, favs = null}) => {
     const scheduleHelpers = new ScheduleHelpers();
     const { formatSession } = scheduleHelpers
     const session = formatSession(data)
@@ -16,7 +17,7 @@ const EventsList = ({data, navigatorUID}) => {
                 <TouchableHighlight onPress={() => goToSession(navigatorUID, item)}>
                     <View>
                         <MyHeaderText>{item.title}</MyHeaderText>
-                        <Heart location={item.location} />
+                        <Heart faved={queryFavs(item.session_id)} location={item.location} />
                     </View>
                 </TouchableHighlight> 
             }

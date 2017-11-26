@@ -20,8 +20,9 @@ export default class App extends Component {
   render() {
     return(
       <Provider store={Store}>
-        <NavigationProvider context={navigationContext}>
+        <NavigationProvider style={{display: 'none'}} context={navigationContext}>
           <StackNavigation 
+            style={{display: 'none'}}
             navigatorUID="root"
             id="root"
             initialRoute={Router.getRoute('layout')}

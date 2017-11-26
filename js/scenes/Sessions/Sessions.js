@@ -12,7 +12,7 @@ const Sessions = ({item, navigatorUID, speaker, faved}) => {
     let id = item.session_id
     return (
         <View key={id}>
-            <Heart location={item.location} />
+            <Heart location={item.location} faved={faved} />
             <MyHeaderText>{item.title}</MyHeaderText>
             <Text>{timeConvert(item.start_time)}</Text>
             <MyAppText>{item.description}</MyAppText>

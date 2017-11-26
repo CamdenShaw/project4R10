@@ -4,6 +4,7 @@ import { connect } from 'react-redux'
 import propTypes from 'prop-types'
 import { getCodeItems } from '../../redux/modules/conduct'
 import { styles } from './styles'
+import { AndroidBackButtonBehavior } from '@expo/ex-navigation'
 
 import About from './About'
 
@@ -20,7 +21,9 @@ class AboutContainer extends Component {
         const { codeOfConduct, isLoading } = this.props
         return isLoading ? 
                 <ActivityIndicator /> :
-                <ScrollView><About data={codeOfConduct} /></ScrollView>
+                <ScrollView>
+                    <About data={codeOfConduct} />
+                </ScrollView>
     }
 }
 

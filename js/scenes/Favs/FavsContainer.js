@@ -8,7 +8,7 @@ import MyAppText from '../../components/text/MyAppText'
 import { realm, queryFavs } from '../../config/module'
 
 class ScheduleContainer extends Component {
-    static route = {navigationBar:{title: "Schedule"}}
+    static route = {navigationBar:{title: "Favourites"}}
     constructor(){
         super()
         this.favs = []
@@ -16,16 +16,25 @@ class ScheduleContainer extends Component {
 
     componentWillMount() {
         this.props.dispatch(getSchedule())
+        this.queryForFavs()
+        realm.addListener('change', this.updateRealm)
+    }
+
+    componentWillUpdate() {
+        this.queryForFavs()
+    }
+
+    queryForFavs = () => {
         let favIds = queryFavs()
+        this.favs = []
         favIds.forEach(id => {
             let x = this.props.schedule.filter(session => {
                 session.session_id === id.id  && this.favs.push(session)
             })
         })
-        realm.addListener('change', this.updateRealm)
     }
 
-    updateRealm = () => this.forceUpdate()
+    updateRealm = () =>{this.queryForFavs()}
 
     render() {
         const { schedule, isLoading, navigation } = this.props

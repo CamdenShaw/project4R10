@@ -12,7 +12,7 @@ const FavSchema = {
 export const realm = new Realm({schema: [FavSchema]})
 
 export const queryFavs = (id = 'noId') => {
-    if(id !== "noId"){ 
+    if(id !== 'noId'){ 
         let fav = realm.objects('Fav').filtered("id == $0", id)
         if(!fav) return
         else return fav

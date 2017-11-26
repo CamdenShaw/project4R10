@@ -90,7 +90,6 @@ class CodeItem extends Component {
 
     middle(x) {
         this.dashTransform = this.icon === '-' ? -2 : 0
-        console.log(this.dashTransform)
         this.setState({
             icon: new Animated.Value(this.icon)
         })
@@ -117,7 +116,6 @@ class CodeItem extends Component {
             inputRange: [0, 2],
             outputRange: ['0deg', '720deg']
         })
-        console.log(this.dashTransform)
         return (
             <View key={this.props.thisKey}>
                 <TouchableOpacity onPress={this.toggleCode}>
