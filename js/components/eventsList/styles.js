@@ -5,7 +5,8 @@ export default StyleSheet.create({
     separator: {
         flex:1,
         height: StyleSheet.hairlineWidth,
-        backgroundColor: colours.lightGrey
+        backgroundColor: colours.lightGrey,
+        marginTop: 1
     },
     time: {
         backgroundColor: colours.lightGrey,
@@ -23,6 +24,5 @@ export default StyleSheet.create({
     },
     container: {
         marginTop: 1,
-        marginBottom: 1
     }
 })

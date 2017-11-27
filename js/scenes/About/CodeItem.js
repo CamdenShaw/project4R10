@@ -1,15 +1,15 @@
 import React, { Component } from 'react';
 import { 
     View,
-    Image, 
+    Text,
     Platform, 
     TouchableOpacity,
     LayoutAnimation, 
     UIManager,
     Animated,
     Easing } from 'react-native'
-import MyHeaderText from '../../components/text/MyHeaderText'
 import MyAppText from '../../components/text/MyAppText'
+import styles from './styles'
 
 const animationConfig = {
     duration: 400,
@@ -89,7 +89,7 @@ class CodeItem extends Component {
     }
 
     middle(x) {
-        this.dashTransform = this.icon === '-' ? -2 : 0
+        this.dashTransform = this.icon === '-' ? -1 : 0
         this.setState({
             icon: new Animated.Value(this.icon)
         })
@@ -119,12 +119,7 @@ class CodeItem extends Component {
         return (
             <View key={this.props.thisKey}>
                 <TouchableOpacity onPress={this.toggleCode}>
-                    <View 
-                        style={{
-                        flex:1, 
-                        flexDirection: 'row',
-                        }}
-                     >
+                    <View style={styles.codeHeader} >
                         <Animated.View 
                             style={{
                                 flex: 1,
@@ -132,21 +127,13 @@ class CodeItem extends Component {
                                 alignItems: 'center',
                                 position: 'relative',
                                 transform: [{rotate: spin},{translateY: this.dashTransform}],
-                                height: 27,
-                                maxWidth: 27,
+                                maxWidth: 20,
                                 opacity: this.state.opacity
                             }}
                          >
-                            <MyHeaderText 
-                                style={{
-                                    textAlign: 'center', 
-                                    height:28, 
-                                    width: 28
-                                    }}
-                                 >
-                                    {this.state.icon._value}</MyHeaderText>
+                            <Text style={styles.codeIcon}>{this.state.icon._value}</Text>
                         </Animated.View>
-                        <MyHeaderText>{this.props.item.title}</MyHeaderText>
+                        <Text style={styles.codeHeaderText}>{this.props.item.title}</Text>
                     </View>
                 </TouchableOpacity>
                 { this.state.showText && <MyAppText>{this.props.item.description}</MyAppText>}
