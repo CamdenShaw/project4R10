@@ -4,7 +4,7 @@ import { colours, typography } from '../../config/styles'
 export default StyleSheet.create({
     text: {
         fontFamily: typography.fontMainLight,
-        fontSize: 17,
+        fontSize: 16,
         color: 'black',
         lineHeight: 26,
         paddingTop: 10,

@@ -1,22 +1,19 @@
 import React from 'react'
-import { Text, Image, View, Button, Linking } from 'react-native';
+import { Text, Image, View } from 'react-native';
+import Button from '../../components/button/wikiButton'
 import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
+import styles from './styles'
 
 const Speaker = ({speaker}) => {
     return (
-        <View>
-            <Image style={{width:100, height:100}} source={{uri: speaker.image}} />
+        <View style={styles.container}>
+            <Image style={styles.image} source={{uri: speaker.image}} />
             <MyHeaderText>{speaker.name}</MyHeaderText>
             <MyAppText>{speaker.bio}</MyAppText>
-            <Button title="More Info" onPress={() => Linking.openURL(speaker.url)} />
+            <Button URL={speaker.url} />
         </View>
     )
 }
-
-const moreInfo = (url) => (
-    //TODO link to url
-    1+1
-)
 
 export default Speaker
