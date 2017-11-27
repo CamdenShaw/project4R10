@@ -2,9 +2,9 @@ import React, { Component } from 'react';
 import { Text, View } from 'react-native'
 import { DrawerNavigation, DrawerNavigationItem as DrawerItem, StackNavigation} from '@expo/ex-navigation'
 import Icon from 'react-native-vector-icons/Ionicons'
+
 import MyAppText from '../components/text/MyAppText'
 import { colours } from '../config/styles'
-
 import Router from './routes'
 
 class NavBar extends Component {

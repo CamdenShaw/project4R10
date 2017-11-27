@@ -2,12 +2,20 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 import { ActivityIndicator, ScrollView } from 'react-native'
 import Sessions from './Sessions'
-import propTypes from 'prop-types'
+import LinearGradient from 'react-native-linear-gradient'
+
 import { getSpeaker } from '../../redux/modules/speaker'
 import { queryFavs, realm } from '../../config/module'
+import NavGradient from '../../components/gradient/navGradient'
 
 class SessionsContainer extends Component {
-    static route = {navigationBar:{title(params) {return "Session"}}}
+    static route = {
+        navigationBar:{
+            title(params) {return "Session"},
+            tintColor: 'white',
+            renderBackground: () => <NavGradient />
+        }
+    }
     constructor() {
         super()
         this.faved = []

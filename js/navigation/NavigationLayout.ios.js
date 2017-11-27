@@ -2,7 +2,6 @@ import React, { Component } from 'react';
 import { Text } from 'react-native'
 import { TabNavigation, TabNavigationItem as TabItem, StackNavigation} from '@expo/ex-navigation'
 import Icon from 'react-native-vector-icons/Ionicons'
-import MyAppText from '../components/text/MyAppText'
 import { colours } from '../config/styles'
 
 import Router from './routes'
@@ -10,7 +9,7 @@ import Router from './routes'
 class NavBar extends Component {
     static route = {
         navigationBar: {
-            visible: false
+            visible: false,
         }
     }
     render() {

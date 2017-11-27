@@ -1,17 +1,19 @@
 import React, { Component } from 'react'
 import { ActivityIndicator, FlatList, View, ScrollView } from 'react-native'
 import { connect } from 'react-redux'
-import propTypes from 'prop-types'
-import { getCodeItems } from '../../redux/modules/conduct'
-import { styles } from './styles'
-import { AndroidBackButtonBehavior } from '@expo/ex-navigation'
 
+import { getCodeItems } from '../../redux/modules/conduct'
 import About from './About'
+import NavGradient from '../../components/gradient/navGradient'
 
 class AboutContainer extends Component {
-    static route = {navigationBar: {title: 'About'}}
-
-    // static propTypes = {}
+    static route = {
+        navigationBar: {
+            title: 'About',
+            renderBackground: () => <NavGradient />,
+            tintColor: 'white'
+        }
+    }
 
     componentDidMount() {
         this.props.dispatch(getCodeItems())

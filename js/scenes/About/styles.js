@@ -28,7 +28,7 @@ export default StyleSheet.create({
     },
     codeHeaderText: {
         fontFamily: typography.fontMain,
-        paddingLeft: 6,
+        paddingLeft: 3,
         fontSize: 16,
         color: colours.purple,
     },
@@ -36,6 +36,7 @@ export default StyleSheet.create({
         textAlign: 'center',
         fontFamily: typography.fontMain,
         color: colours.purple,
-        fontSize: 18
+        fontSize: 18,
+        zIndex: 10000
     }
 })

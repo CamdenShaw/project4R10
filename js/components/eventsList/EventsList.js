@@ -1,6 +1,7 @@
 import React from 'react';
 import { Text, View, SectionList, TouchableHighlight } from 'react-native'
 import propTypes from 'prop-types'
+
 import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
 import { ScheduleHelpers, goToSession, timeConvert } from '../../lib/helpers'

@@ -1,7 +1,8 @@
 import React from 'react'
-import Icon from 'react-native-vector-icons/Ionicons'
-import { colours } from '../../config/styles'
 import { Platform, View, Text } from 'react-native';
+import Icon from 'react-native-vector-icons/Ionicons'
+
+import { colours } from '../../config/styles'
 import styles from './styles'
 
 const Heart = ({location, faved}) => {

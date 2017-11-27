@@ -14,7 +14,8 @@ export default StyleSheet.create({
     speakerContainer: {
         flex:1, 
         flexDirection: "row", 
-        alignItems: "center"},
+        alignItems: "center",
+    },
     image: {
         width: 60, 
         height: 60, 

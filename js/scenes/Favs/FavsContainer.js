@@ -2,13 +2,22 @@ import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { ActivityIndicator, ScrollView } from 'react-native'
 import propTypes from 'prop-types'
+import Icon from 'react-native-vector-icons/Ionicons'
+
 import EventsList from '../../components/eventsList'
 import { getSchedule } from '../../redux/modules/schedule'
 import MyAppText from '../../components/text/MyAppText'
 import { realm, queryFavs } from '../../config/module'
+import NavGradient from '../../components/gradient/navGradient'
 
 class ScheduleContainer extends Component {
-    static route = {navigationBar:{title: "Favourites"}}
+    static route = {
+        navigationBar:{
+            title: "Favourites",
+            renderBackground: () => <NavGradient />,
+            tintColor: 'white'
+        }
+    }
     constructor(){
         super()
         this.favs = []
