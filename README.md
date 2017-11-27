@@ -1,6 +1,6 @@
 # R10
 ![alt text](./screen-shots/ios/01schedule-scene.png "Welcome to the R10 tech conference!. (ios)")
-![alt text](./screen-shots/android/04speaker-scene.png "Welcome to the R10 tech conference! (android)")
+![alt text](./screen-shots/android/01schedule-scene.png "Welcome to the R10 tech conference! (android)")
 
 Red Academy ADP Project 4
 
@@ -30,8 +30,9 @@ In this project I learned how to build a mobile app that is compatible for bot a
 ![alt text](./screen-shots/ios/05about-scene1.png "Never heard of us?  Read up about this conference and its code of conduct to learn more. (ios)")
 ![alt text](./screen-shots/android/05about-scene1.png "Never heard of us?  Read up about this conference and its code of conduct to learn more. (android)")
 
-# Contributos
+# Contributors
 Camden Shaw
+
 ![alt text](./screen-shots/ios/05about-scene2.png "Check out the fanciful animation on the '+' to '-' icon. (ios)")
 ![alt text](./screen-shots/android/05about-scene2.png "Check out the fanciful animation on the '+' to '-' icon. (android)")
 
