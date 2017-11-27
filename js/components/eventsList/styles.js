@@ -12,17 +12,17 @@ export default StyleSheet.create({
         backgroundColor: colours.lightGrey,
         paddingTop: 5,
         paddingBottom: 5,
-        paddingLeft: 10,
         fontFamily: typography.fontMain,
+        paddingLeft: 10
     },
     text: {
         color: 'black',
         fontFamily: typography.fontMain,
         fontSize: 14,
-        paddingLeft: 10,
         paddingTop: 10
     },
     container: {
         marginTop: 1,
+        paddingLeft: 10
     }
 })
