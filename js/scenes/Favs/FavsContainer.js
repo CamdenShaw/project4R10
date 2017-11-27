@@ -26,7 +26,7 @@ class ScheduleContainer extends Component {
     componentWillMount() {
         this.props.dispatch(getSchedule())
         this.queryForFavs()
-        realm.addListener('change', this.updateRealm)
+        realm.addListener('change', this.queryForFavs)
     }
 
     componentWillUpdate() {
@@ -42,8 +42,6 @@ class ScheduleContainer extends Component {
             })
         })
     }
-
-    updateRealm = () =>{this.queryForFavs()}
 
     render() {
         const { schedule, isLoading, navigation } = this.props

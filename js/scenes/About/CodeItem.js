@@ -63,11 +63,10 @@ class CodeItem extends Component {
                     }
                 ),
             ]),
-        ]).start(() => this.middle(x))
+        ]).start(() => this.middle())
     }
 
-    animateIconEnd(x) {
-        let y = this.icon === '-' ? x+0.75 : x+1.25
+    animateIconEnd() {
         Animated.parallel([
             Animated.timing(
                 this.state.rotate,
@@ -88,12 +87,12 @@ class CodeItem extends Component {
         ]).start(() => this.reset())
     }
 
-    middle(x) {
+    middle() {
         this.dashTransform = this.icon === '-' ? -1 : 0
         this.setState({
             icon: new Animated.Value(this.icon)
         })
-        this.animateIconEnd(x)
+        this.animateIconEnd()
     }
 
     reset() {
