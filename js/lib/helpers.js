@@ -34,7 +34,9 @@ const goToSpeaker = (speakerData) => {
 }
 
 const timeConvert = (unixTime) => {
-    return moment.unix(unixTime).format("hh:mm a")
+    let time = moment.unix(unixTime).format("hh:mm A")
+    if(time[0] === '0') return time.slice(1, -1) + 'M'
+    return time
 }
 
 export { ScheduleHelpers, goToSession, goToSpeaker, timeConvert }

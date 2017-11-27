@@ -12,7 +12,7 @@ import Store from './redux/store'
 import Router from './navigation/routes'
 
 const navigationContext = new NavigationContext({
-  router: Router,
+  router: <Router style={{padding: 10, margin: 10}} />,
   store: Store
 })
 
@@ -22,7 +22,6 @@ export default class App extends Component {
       <Provider store={Store}>
         <NavigationProvider style={{display: 'none'}} context={navigationContext}>
           <StackNavigation 
-            // style={{display: 'none'}}
             navigatorUID="root"
             id="root"
             initialRoute={Router.getRoute('layout')}
