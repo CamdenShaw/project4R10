@@ -7,7 +7,7 @@ import { colours } from '../../config/styles'
 
 const WikiButton = ({URL}) => {
     return (
-        <TouchableHighlight onPress={() => Linking.openURL(URL)} >
+        <TouchableHighlight underlayColor={colours.lightGrey} onPress={() => Linking.openURL(URL)} >
             <LinearGradient 
                 colors={[colours.purple, colours.blue]}
                 start={{x: 0, y: 0.5}}

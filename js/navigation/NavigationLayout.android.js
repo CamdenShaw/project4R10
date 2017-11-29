@@ -24,7 +24,7 @@ class NavBar extends Component {
                 <DrawerItem
                     id="schedule"
                     renderTitle={isSelected => this.renderTitle('Schedule', isSelected)}
-                    // selectedStyle={{backgroundColor: "blue"}}
+                    selectedStyle={{backgroundColor: colours.mediumGrey}}
                     renderIcon={isSelected => this.renderIcon("md-calendar", isSelected)}>
                     <StackNavigation 
                         id="schedule"
@@ -35,6 +35,7 @@ class NavBar extends Component {
                 <DrawerItem
                     id="favs"
                     renderTitle={isSelected => this.renderTitle('Favourites', isSelected)}
+                    selectedStyle={{backgroundColor: colours.mediumGrey}}
                     renderIcon={isSelected => this.renderIcon("md-heart", isSelected)}>
                     <StackNavigation 
                         id="favs"
@@ -45,6 +46,7 @@ class NavBar extends Component {
                 <DrawerItem
                     id="about"
                     renderTitle={isSelected => this.renderTitle('About', isSelected)}
+                    selectedStyle={{backgroundColor: colours.mediumGrey}}
                     renderIcon={isSelected => this.renderIcon("md-information-circle", isSelected)}>
                     <StackNavigation 
                         id="about"

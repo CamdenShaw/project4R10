@@ -8,6 +8,7 @@ import { timeConvert, goToSpeaker } from '../../lib/helpers'
 import { getSpeaker } from '../../redux/modules/speaker'
 import Heart from '../../components/icons/heart'
 import styles from './styles'
+import { colours } from '../../config/styles.js'
 
 const Sessions = ({item, navigatorUID, speaker, faved}) => {
     let id = item.session_id
@@ -20,7 +21,7 @@ const Sessions = ({item, navigatorUID, speaker, faved}) => {
             { speaker &&
             <View>
                 <Text style={styles.speakerHeader}>Presented by:</Text>
-                <TouchableHighlight onPress={() => goToSpeaker(speaker)}>
+                <TouchableHighlight underlayColor={colours.lightGrey} onPress={() => goToSpeaker(speaker)}>
                     <View style={styles.speakerContainer}>
                         <Image style={styles.image} source={{uri: `${speaker.image}`}} />
                         <Text style={styles.speakerText}>{speaker.name}</Text>

@@ -8,13 +8,14 @@ import { formatSession, goToSession, timeConvert } from '../../lib/helpers'
 import Heart from '../icons/heart'
 import { queryFavs } from '../../config/module'
 import styles from './styles'
+import { colours } from '../../config/styles'
 
 const EventsList = ({data, navigatorUID, favs = null}) => {
     const session = formatSession(data)
     return (
         <SectionList
             renderItem={({item}) => 
-                <TouchableHighlight onPress={() => goToSession(navigatorUID, item)}>
+                <TouchableHighlight underlayColor={colours.lightGrey} onPress={() => goToSession(navigatorUID, item)}>
                     <View style={styles.container}>
                         <Text style={styles.text}>{item.title}</Text>
                         <Heart faved={queryFavs(item.session_id)} location={item.location} />
