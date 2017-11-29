@@ -1,5 +1,6 @@
 # R10
 Red Academy ADP Project 4
+
 ![alt text](./screen-shots/ios/01schedule-scene.png "Welcome to the R10 tech conference!. (ios)")
 ![alt text](./screen-shots/android/01schedule-scene.png "Welcome to the R10 tech conference! (android)")
 
@@ -9,7 +10,7 @@ Red-Academy is hosting the very popular R10 conference!  Download this app to ke
 ![alt text](./screen-shots/ios/02favourites-scene.png "Favourite all the sessions and events you wish to participate in for a quick, easy to manage schedule. (ios)")
 ![alt text](./screen-shots/android/02favourites-scene.png "Favourite all the sessions and events you wish to participate in for a quick, easy to manage schedule. (android)")
 
-An app for keeping up to date with the schedule and participating speakers at the R10 conference.
+It is an app for keeping up to date with the schedule and participating speakers at the R10 conference.
 
 ![alt text](./screen-shots/ios/03session-scene.png "Get more information about the sessions that pique your interest. (ios)")
 ![alt text](./screen-shots/android/03session-scene.png "Get more information about the sessions that pique your interest. (android)")
@@ -39,7 +40,7 @@ An app for keeping up to date with the schedule and participating speakers at th
 ![alt text](./screen-shots/ios/04speaker-scene.png "Don't know the speaker?  Read a brief bio that links to their wikipedia page. (ios)")
 ![alt text](./screen-shots/android/04speaker-scene.png "Don't know the speaker?  Read a brief bio that links to their wikipedia page. (android)")
 
-#installation
+# Installation
 1. clone from github
 2. cd into the project folder
 3. run *npm-install*

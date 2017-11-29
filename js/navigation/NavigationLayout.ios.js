@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Text } from 'react-native'
 import { TabNavigation, TabNavigationItem as TabItem, StackNavigation} from '@expo/ex-navigation'
 import Icon from 'react-native-vector-icons/Ionicons'
-import { colours } from '../config/styles'
+import { colours, typography } from '../config/styles'
 
 import Router from './routes'
 
@@ -21,8 +21,7 @@ class NavBar extends Component {
                     id="schedule"
                     title="Schedule"
                     renderTitle={this.renderTitle}
-                    // selectedStyle={{backgroundColor: "blue"}}
-                    renderIcon={isSelected => this.renderIcon("ios-calendar-outline", isSelected)}>
+                    renderIcon={isSelected => this.renderIcon("ios-calendar", isSelected)}>
                     <StackNavigation 
                         id="schedule"
                         navigatorUID="schedule"
@@ -33,8 +32,7 @@ class NavBar extends Component {
                     id="favs"
                     title="Favs"
                     renderTitle={this.renderTitle}
-                    // selectedStyle={{backgroundColor: "purple"}}
-                    renderIcon={isSelected => this.renderIcon("ios-heart-outline", isSelected)}>
+                    renderIcon={isSelected => this.renderIcon("ios-heart", isSelected)}>
                     <StackNavigation 
                         id="favs"
                         navigatorUID="favs"
@@ -45,8 +43,7 @@ class NavBar extends Component {
                     id="about"
                     title="About"
                     renderTitle={this.renderTitle}
-                    // selectedStyle={{backgroundColor: "deeppink"}}
-                    renderIcon={isSelected => this.renderIcon("ios-information-circle-outline", isSelected)}>
+                    renderIcon={isSelected => this.renderIcon("ios-information-circle", isSelected)}>
                     <StackNavigation 
                         id="about"
                         navigatorUID="about"
@@ -62,7 +59,7 @@ class NavBar extends Component {
     }
     renderTitle(isSelected, title) {
         const colour = isSelected ? "white" : colours.mediumGrey
-        return <Text style={{color: colour}}>{title}</Text>
+        return <Text style={{ color: colour, fontFamily: typography.fontMain }}>{title}</Text>
     }
 }
 

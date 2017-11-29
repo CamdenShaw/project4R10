@@ -4,7 +4,7 @@ import { DrawerNavigation, DrawerNavigationItem as DrawerItem, StackNavigation} 
 import Icon from 'react-native-vector-icons/Ionicons'
 
 import MyAppText from '../components/text/MyAppText'
-import { colours } from '../config/styles'
+import { colours, typography } from '../config/styles'
 import Router from './routes'
 
 class NavBar extends Component {
@@ -35,8 +35,7 @@ class NavBar extends Component {
                 <DrawerItem
                     id="favs"
                     renderTitle={isSelected => this.renderTitle('Favourites', isSelected)}
-                    selectedStyle={{backgroundColor: "purple"}}
-                    renderIcon={isSelected => this.renderIcon("md-heart-outline", isSelected)}>
+                    renderIcon={isSelected => this.renderIcon("md-heart", isSelected)}>
                     <StackNavigation 
                         id="favs"
                         navigatorUID="favs"
@@ -46,7 +45,6 @@ class NavBar extends Component {
                 <DrawerItem
                     id="about"
                     renderTitle={isSelected => this.renderTitle('About', isSelected)}
-                    // selectedStyle={{backgroundColor: "deeppink"}}
                     renderIcon={isSelected => this.renderIcon("md-information-circle", isSelected)}>
                     <StackNavigation 
                         id="about"
@@ -63,7 +61,7 @@ class NavBar extends Component {
     }
     renderTitle(title, isSelected) {
         const colour = isSelected ? "white" : colours.mediumGrey
-        return <Text style={{color: colour}}>{title}</Text>
+        return <Text style={{ color: colour, fontFamily: typography.fontMain }}>{title}</Text>
     }
 
     renderHeader =() =>{
