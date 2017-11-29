@@ -4,7 +4,7 @@ import propTypes from 'prop-types'
 import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
 import styles from './styles'
-import CodeItem from './CodeItem'
+import CodeItem from '../../components/codeItem/CodeItem'
 
 const About = ({data}) => {
     let key = 0

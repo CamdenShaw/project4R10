@@ -4,19 +4,17 @@ import Store from '../redux/store'
 import Router from '../navigation/routes'
 import moment from 'moment'
 
-class ScheduleHelpers extends Component {
-    formatObject = (data) => {
+const formatObject = (data) => {
         const dataObject = Object.getOwnPropertyNames(data).map(index => data[index]);
         return dataObject[0]
     }
 
-    formatSession = (sessions) => {
-        return sessions.reduce((acc, curr) => {
-            const timeExists = acc.find(section => section.title === curr.start_time)
-            timeExists ? timeExists.data.push(curr) : acc.push({title: curr.start_time, data: [curr]})
-            return acc
-        }, [].sort((a ,b) => a.title - b.title))
-    }
+const formatSession = (sessions) => {
+    return sessions.reduce((acc, curr) => {
+        const timeExists = acc.find(section => section.title === curr.start_time)
+        timeExists ? timeExists.data.push(curr) : acc.push({title: curr.start_time, data: [curr]})
+        return acc
+    }, [].sort((a ,b) => a.title - b.title))
 }
 
 const goToSession = (currentNavigatorUID, sessionData) => {
@@ -39,4 +37,4 @@ const timeConvert = (unixTime) => {
     return time
 }
 
-export { ScheduleHelpers, goToSession, goToSpeaker, timeConvert }
+export { formatObject, formatSession, goToSession, goToSpeaker, timeConvert }

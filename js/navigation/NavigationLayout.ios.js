@@ -21,7 +21,7 @@ class NavBar extends Component {
                     id="schedule"
                     title="Schedule"
                     renderTitle={this.renderTitle}
-                    selectedStyle={{backgroundColor: "blue"}}
+                    // selectedStyle={{backgroundColor: "blue"}}
                     renderIcon={isSelected => this.renderIcon("ios-calendar-outline", isSelected)}>
                     <StackNavigation 
                         id="schedule"
@@ -30,27 +30,27 @@ class NavBar extends Component {
                     />
                 </TabItem>
                 <TabItem
-                    id="about"
-                    title="About"
-                    renderTitle={this.renderTitle}
-                    selectedStyle={{backgroundColor: "deeppink"}}
-                    renderIcon={isSelected => this.renderIcon("ios-information-circle-outline", isSelected)}>
-                    <StackNavigation 
-                        id="about"
-                        navigatorUID="about"
-                        initialRoute={Router.getRoute('about')}
-                    />
-                </TabItem>
-                <TabItem
                     id="favs"
                     title="Favs"
                     renderTitle={this.renderTitle}
-                    selectedStyle={{backgroundColor: "purple"}}
+                    // selectedStyle={{backgroundColor: "purple"}}
                     renderIcon={isSelected => this.renderIcon("ios-heart-outline", isSelected)}>
                     <StackNavigation 
                         id="favs"
                         navigatorUID="favs"
                         initialRoute={Router.getRoute('favs')}
+                    />
+                </TabItem>
+                <TabItem
+                    id="about"
+                    title="About"
+                    renderTitle={this.renderTitle}
+                    // selectedStyle={{backgroundColor: "deeppink"}}
+                    renderIcon={isSelected => this.renderIcon("ios-information-circle-outline", isSelected)}>
+                    <StackNavigation 
+                        id="about"
+                        navigatorUID="about"
+                        initialRoute={Router.getRoute('about')}
                     />
                 </TabItem>
             </TabNavigation>

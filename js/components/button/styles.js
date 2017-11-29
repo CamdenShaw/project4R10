@@ -1,9 +1,8 @@
 import { StyleSheet } from 'react-native'
-import { colours, typography } from '../../config/styles'
+import { typography } from '../../config/styles'
 
 export default StyleSheet.create({
     favButton: {
-        backgroundColor: colours.purple,
         paddingTop: 12,
         paddingLeft: 5,
         paddingRight: 5,
@@ -18,9 +17,9 @@ export default StyleSheet.create({
         fontSize: 16,
         textAlign: 'center',
         fontFamily: typography.fontMain,
+        backgroundColor: 'transparent'
     },
     wikiButton: {
-        backgroundColor: colours.purple,
         paddingTop: 12,
         paddingLeft: 20,
         paddingRight: 20,
@@ -28,4 +27,12 @@ export default StyleSheet.create({
         margin: 20,
         borderRadius: 30
     },
+    buttonGradient: {
+        width: "100%",
+        paddingLeft: 20,
+        paddingRight: 20,
+        paddingTop: 12,
+        paddingBottom: 12,
+        borderRadius: 30
+    }
 })

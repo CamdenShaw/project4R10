@@ -19,28 +19,17 @@ class NavBar extends Component {
                 id='main'
                 initialItem="schedule"
                 rendHeader={this.renderHeader()}
-                drawerWidth={300}
+                drawerWidth={200}
              >
                 <DrawerItem
                     id="schedule"
                     renderTitle={isSelected => this.renderTitle('Schedule', isSelected)}
-                    selectedStyle={{backgroundColor: "blue"}}
+                    // selectedStyle={{backgroundColor: "blue"}}
                     renderIcon={isSelected => this.renderIcon("md-calendar", isSelected)}>
                     <StackNavigation 
                         id="schedule"
                         navigatorUID="schedule"
                         initialRoute={Router.getRoute('schedule')}
-                    />
-                </DrawerItem>
-                <DrawerItem
-                    id="about"
-                    renderTitle={isSelected => this.renderTitle('About', isSelected)}
-                    selectedStyle={{backgroundColor: "deeppink"}}
-                    renderIcon={isSelected => this.renderIcon("md-information-circle", isSelected)}>
-                    <StackNavigation 
-                        id="about"
-                        navigatorUID="about"
-                        initialRoute={Router.getRoute('about')}
                     />
                 </DrawerItem>
                 <DrawerItem
@@ -52,6 +41,17 @@ class NavBar extends Component {
                         id="favs"
                         navigatorUID="favs"
                         initialRoute={Router.getRoute('favs')}
+                    />
+                </DrawerItem>
+                <DrawerItem
+                    id="about"
+                    renderTitle={isSelected => this.renderTitle('About', isSelected)}
+                    // selectedStyle={{backgroundColor: "deeppink"}}
+                    renderIcon={isSelected => this.renderIcon("md-information-circle", isSelected)}>
+                    <StackNavigation 
+                        id="about"
+                        navigatorUID="about"
+                        initialRoute={Router.getRoute('about')}
                     />
                 </DrawerItem>
             </DrawerNavigation>

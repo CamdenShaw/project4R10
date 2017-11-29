@@ -1,7 +1,4 @@
-import { ScheduleHelpers } from '../../lib/helpers'
-
-const scheduleHelpers = new ScheduleHelpers()
-const { formatObject } = scheduleHelpers
+import { formatObject } from '../../lib/helpers'
 
 const getSpeakerBegin = () => (
     { type: "GET_SPEAKER_BEGIN"}

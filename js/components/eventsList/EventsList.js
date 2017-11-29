@@ -4,14 +4,12 @@ import propTypes from 'prop-types'
 
 import MyAppText from '../../components/text/MyAppText'
 import MyHeaderText from '../../components/text/MyHeaderText'
-import { ScheduleHelpers, goToSession, timeConvert } from '../../lib/helpers'
+import { formatSession, goToSession, timeConvert } from '../../lib/helpers'
 import Heart from '../icons/heart'
 import { queryFavs } from '../../config/module'
 import styles from './styles'
 
 const EventsList = ({data, navigatorUID, favs = null}) => {
-    const scheduleHelpers = new ScheduleHelpers();
-    const { formatSession } = scheduleHelpers
     const session = formatSession(data)
     return (
         <SectionList
