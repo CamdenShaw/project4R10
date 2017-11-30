@@ -8,7 +8,8 @@ import {
     UIManager,
     Animated,
     Easing } from 'react-native'
-import MyAppText from '../text/MyAppText'
+    
+import MyAppText from '../MyAppText'
 import styles from './styles'
 
 const animationConfig = {

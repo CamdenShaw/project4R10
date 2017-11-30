@@ -1,17 +1,18 @@
 import React from 'react';
 import { Text, View, Image, TouchableHighlight } from 'react-native'
 import propTypes from 'prop-types'
-import MyAppText from '../../components/text/MyAppText'
-import MyHeaderText from '../../components/text/MyHeaderText'
-import Button from '../../components/button/favButton'
+
+import MyHeaderText from '../../components/MyHeaderText'
+import MyAppText from '../../components/MyAppText'
+import Heart from '../../components/HeartIcon'
+import Button from '../../components/Button'
 import { timeConvert, goToSpeaker } from '../../lib/helpers'
-import { getSpeaker } from '../../redux/modules/speaker'
-import Heart from '../../components/icons/heart'
 import styles from './styles'
 import { colours } from '../../config/styles.js'
 
-const Sessions = ({item, navigatorUID, speaker, faved}) => {
+const Sessions = ({item, navigatorUID, speaker, faved, dealWithFav, buttonText}) => {
     let id = item.session_id
+    console.log(item.location, faved)
     return (
         <View style={styles.container} key={id}>
             <Heart location={item.location} faved={faved} />
@@ -30,7 +31,7 @@ const Sessions = ({item, navigatorUID, speaker, faved}) => {
             </View>
             }
             <View style={styles.separator} />
-            <Button sessionId={id} faved={faved} />
+            <Button handlePress={dealWithFav} text={buttonText} />
         </View>
     )
 }

@@ -7,15 +7,13 @@
 import React, { Component } from 'react';
 import { NavigationProvider, StackNavigation, NavigationContext } from '@expo/ex-navigation'
 import { Provider } from 'react-redux'
-import LinearGradient from 'react-native-linear-gradient'
 
 import Store from './redux/store'
 import Router from './navigation/routes'
-import { colours } from './config/styles'
 
 const navigationContext = new NavigationContext({
   router: Router,
-  store: Store
+  store: Store,
 })
 
 export default class App extends Component {

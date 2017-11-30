@@ -1,11 +1,12 @@
 import { StyleSheet } from 'react-native'
 import { colours, typography } from '../../config/styles'
 
-export default {
+export default StyleSheet.create({
     heartContainer: {
         flex:1, 
         flexDirection: 'row', 
-        justifyContent: 'space-between'
+        justifyContent: 'space-between',
+        marginTop: 10,
     },
     text: {
         fontSize: 14,
@@ -19,4 +20,4 @@ export default {
         paddingBottom: 5,
         paddingRight: 10
     }
-}
+})

@@ -1,15 +1,15 @@
 import React from 'react'
-import { View, Image} from 'react-native'
+import { View, Image, ScrollView } from 'react-native'
 import propTypes from 'prop-types'
-import MyAppText from '../../components/text/MyAppText'
-import MyHeaderText from '../../components/text/MyHeaderText'
+
+import MyAppText from '../../components/MyAppText'
+import MyHeaderText from '../../components/MyHeaderText'
+import CodeItem from '../../components/CodeItem'
 import styles from './styles'
-import CodeItem from '../../components/codeItem/CodeItem'
 
 const About = ({data}) => {
-    let key = 0
     return (
-        <View style={styles.container}>
+        <ScrollView style={styles.container}>
             <Image source={require('../../assets/images/r10_logo.png')} style={styles.image} />
             <View style={styles.separator} />
             <MyAppText>R10 is a conference that focuses on just about any topic related to dev.</MyAppText>
@@ -18,15 +18,14 @@ const About = ({data}) => {
             <MyHeaderText>Code of Conduct</MyHeaderText>
             {
                 data.map(item => {
-                    key++
                     return (
-                        <CodeItem key={key} thisKey={key} item={item} />
+                        <CodeItem key={item.title} thisKey={item.title} item={item} />
                     )
                 })
             }
             <View style={styles.separator} />
             <MyAppText>© RED Academy 2017</MyAppText>
-        </View>
+        </ScrollView>
     )
 }
 

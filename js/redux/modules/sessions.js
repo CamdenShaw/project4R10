@@ -19,8 +19,8 @@ export const getSessions = () => {
         dispatch(getSessionsBegin())
         fetch('https://r10app-95fea.firebaseio.com/sessions.json')
             .then(resp => resp.json())
-            .then(items => {
-                dispatch(getSessionsSuccess(items))
+            .then((data) => {
+                dispatch(getSessionsSuccess(data))
             })
             .catch(err => {
                 dispatch(getSessionsFail(err))

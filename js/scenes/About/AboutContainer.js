@@ -4,7 +4,7 @@ import { connect } from 'react-redux'
 
 import { getCodeItems } from '../../redux/modules/conduct'
 import About from './About'
-import NavGradient from '../../components/gradient/navGradient'
+import NavGradient from '../../components/Gradient'
 
 class AboutContainer extends Component {
     static route = {
@@ -22,10 +22,8 @@ class AboutContainer extends Component {
     render() {
         const { codeOfConduct, isLoading } = this.props
         return isLoading ? 
-                <ActivityIndicator /> :
-                <ScrollView>
-                    <About data={codeOfConduct} />
-                </ScrollView>
+                <ActivityIndicator /> 
+                 :  <About data={codeOfConduct} />
     }
 }
 

@@ -1,5 +1,5 @@
 import { StyleSheet } from 'react-native'
-import { colours, typography } from '../../config/styles'
+import { typography } from '../../config/styles'
 
 export default StyleSheet.create({
     page: {

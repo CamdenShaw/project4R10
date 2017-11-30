@@ -1,16 +1,15 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
 import { ActivityIndicator, ScrollView } from 'react-native'
-import propTypes from 'prop-types'
-import Icon from 'react-native-vector-icons/Ionicons'
+import PropTypes from 'prop-types'
 
-import EventsList from '../../components/eventsList'
+import Favs from './Favs'
+import NavGradient from '../../components/Gradient'
 import { getSchedule } from '../../redux/modules/schedule'
-import MyAppText from '../../components/text/MyAppText'
 import { realm, queryFavs } from '../../config/module'
-import NavGradient from '../../components/gradient/navGradient'
+import { formatSession } from '../../lib/helpers'
 
-class ScheduleContainer extends Component {
+class FavsContainer extends Component {
     static route = {
         navigationBar:{
             title: "Favourites",
@@ -33,23 +32,28 @@ class ScheduleContainer extends Component {
         this.queryForFavs()
     }
 
+    componentWillUnmount() {
+        realm.removeListener('change', this.queryForFavs)
+    }
+
     queryForFavs = () => {
         let favIds = queryFavs()
         this.favs = []
         favIds.forEach(id => {
-            let x = this.props.schedule.filter(session => {
+            this.props.schedule.filter(session => {
                 session.session_id === id.id  && this.favs.push(session)
             })
         })
     }
 
     render() {
-        const { schedule, isLoading, navigation } = this.props
+        let { navigation, schedule, isLoading } = this.props
         return isLoading ?
-            <ActivityIndicator /> :
-            <ScrollView><EventsList data={this.favs} navigatorUID={navigation} /></ScrollView>
+            <ActivityIndicator /> 
+             :  <Favs navigation={navigation} isLoading={isLoading} favs={formatSession(this.favs)} />
     }
 }
+
 
 const mapStateToProps = state => {
     return {
@@ -59,4 +63,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(ScheduleContainer)
+export default connect(mapStateToProps)(FavsContainer);

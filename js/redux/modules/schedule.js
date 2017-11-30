@@ -1,3 +1,4 @@
+import { formatSession } from '../../lib/helpers'
 
 const getScheduleBegin = () => {
     return { type: "GET_SCHEDULE_BEGIN"}

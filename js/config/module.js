@@ -1,4 +1,5 @@
 import Realm from 'realm'
+import { formatObject } from '../lib/helpers'
 
 const FavSchema = {
     name: "Fav",

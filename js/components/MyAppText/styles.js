@@ -9,12 +9,5 @@ export default StyleSheet.create({
         lineHeight: 26,
         paddingTop: 10,
         paddingBottom: 10
-    },
-    header: {
-        fontFamily: typography.fontMain,
-        fontSize: 22,
-        color: 'black',
-        paddingTop: 5,
-        paddingBottom: 5
     }
 })

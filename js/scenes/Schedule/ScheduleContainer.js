@@ -1,12 +1,13 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { ActivityIndicator, ScrollView, TouchableHighlight } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 
-import EventsList from '../../components/eventsList'
+import Schedule from './Schedule'
+import NavGradient from '../../components/Gradient'
 import { getSchedule } from '../../redux/modules/schedule'
 import { queryFavs } from '../../config/module'
 import { realm } from '../../config/module'
-import NavGradient from '../../components/gradient/navGradient'
+import { formatSession } from '../../lib/helpers'
 
 class ScheduleContainer extends Component {
     static route = {
@@ -23,7 +24,7 @@ class ScheduleContainer extends Component {
 
     componentDidMount() {
         this.props.dispatch(getSchedule())
-        this.favIds = queryFavs()
+        this.favIDs = queryFavs()
         realm.addListener('change', this.updateRealm)
     }
 
@@ -34,12 +35,13 @@ class ScheduleContainer extends Component {
     }
 
     render() {
-        const { schedule, isLoading, navigation } = this.props
+        let { navigation, schedule, isLoading } = this.props
         return isLoading ?
-            <ActivityIndicator /> :
-            <ScrollView><EventsList data={schedule} favs={this.favIds} navigatorUID={navigation} /></ScrollView>
+            <ActivityIndicator /> 
+             : <Schedule schedule={formatSession(schedule)} navigation={navigation} favIDs={this.favIDs} isLoading={isLoading} />
     }
 }
+
 
 const mapStateToProps = state => {
     return {
@@ -49,4 +51,4 @@ const mapStateToProps = state => {
     }
 }
 
-export default connect(mapStateToProps)(ScheduleContainer)
+export default connect(mapStateToProps)(ScheduleContainer);

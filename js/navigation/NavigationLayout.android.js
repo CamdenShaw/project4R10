@@ -3,7 +3,7 @@ import { Text, View } from 'react-native'
 import { DrawerNavigation, DrawerNavigationItem as DrawerItem, StackNavigation} from '@expo/ex-navigation'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import MyAppText from '../components/text/MyAppText'
+import MyAppText from '../components/MyAppText'
 import { colours, typography } from '../config/styles'
 import Router from './routes'
 
@@ -18,7 +18,6 @@ class NavBar extends Component {
             <DrawerNavigation
                 id='main'
                 initialItem="schedule"
-                rendHeader={this.renderHeader()}
                 drawerWidth={200}
              >
                 <DrawerItem
@@ -64,10 +63,6 @@ class NavBar extends Component {
     renderTitle(title, isSelected) {
         const colour = isSelected ? "white" : colours.mediumGrey
         return <Text style={{ color: colour, fontFamily: typography.fontMain }}>{title}</Text>
-    }
-
-    renderHeader =() =>{
-        return <View styles={{height: 30, color: 'black'}} />
     }
 }
 
