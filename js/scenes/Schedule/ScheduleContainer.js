@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { ActivityIndicator } from 'react-native'
 
 import Schedule from './Schedule'
+import Loader from '../../components/Loader'
 import NavGradient from '../../components/Gradient'
 import { getSchedule } from '../../redux/modules/schedule'
 import { queryFavs } from '../../config/module'
@@ -37,7 +37,7 @@ class ScheduleContainer extends Component {
     render() {
         let { navigation, schedule, isLoading } = this.props
         return isLoading ?
-            <ActivityIndicator /> 
+            <Loader /> 
              : <Schedule schedule={formatSession(schedule)} navigation={navigation} favIDs={this.favIDs} isLoading={isLoading} />
     }
 }

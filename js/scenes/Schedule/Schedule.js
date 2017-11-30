@@ -1,8 +1,8 @@
 import React from "react"
-import { connect } from "react-redux"
-import { ActivityIndicator, ScrollView } from "react-native"
+import { ScrollView } from "react-native"
 
 import EventsList from "../../components/EventsList"
+import Loader from "../../components/Loader"
 
 const ScheduleContainer = ({ schedule, navigation, favIDs, isLoading }) => {
     return schedule.length > 0 ? (
@@ -10,7 +10,7 @@ const ScheduleContainer = ({ schedule, navigation, favIDs, isLoading }) => {
             <EventsList data={schedule} favs={favIDs} navigatorUID={navigation} />
         </ScrollView>
     ) : (
-        <ActivityIndicator />
+        <Loader />
     )
 }
 

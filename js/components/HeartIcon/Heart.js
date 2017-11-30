@@ -25,13 +25,11 @@ const Heart = ({ location, faved }) => {
 }
 
 Heart.defaultPropt = {
-    location: "",
-    faved: {}
+    location: ""
 }
 
 Heart.propTypes = {
-    location: PropTypes.string,
-    faved: PropTypes.obj
+    location: PropTypes.string
 }
 
 export default Heart

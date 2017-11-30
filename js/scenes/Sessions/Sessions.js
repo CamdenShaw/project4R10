@@ -18,6 +18,7 @@ const Sessions = ({
     buttonText
 }) => {
     let id = item.session_id
+    console.log(item.title, faved)
     return (
         <ScrollView style={styles.container} key={id}>
             <Heart location={item.location} faved={faved} />

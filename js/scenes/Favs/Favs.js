@@ -1,12 +1,13 @@
 import React from "react"
-import { ActivityIndicator, ScrollView } from "react-native"
+import { ScrollView } from "react-native"
 import PropTypes from "prop-types"
 
 import EventsList from "../../components/EventsList"
+import Loader from "../../components/Loader"
 
 const Favs = ({ favs, isLoading, navigation }) => {
     return isLoading ? (
-        <ActivityIndicator />
+        <Loader />
     ) : (
         <ScrollView>
             <EventsList data={favs} favs={favs.id} navigatorUID={navigation} />

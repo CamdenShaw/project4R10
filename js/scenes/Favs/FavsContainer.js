@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { ActivityIndicator } from 'react-native'
+import Loader from '../../components/Loader'
 import PropTypes from 'prop-types'
 
 import Favs from './Favs'
@@ -49,7 +49,7 @@ class FavsContainer extends Component {
     render() {
         let { navigation, isLoading } = this.props
         return isLoading ?
-            <ActivityIndicator /> 
+            <Loader /> 
              :  <Favs navigation={navigation} isLoading={isLoading} favs={formatSession(this.favs)} />
     }
 }

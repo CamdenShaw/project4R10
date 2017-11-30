@@ -1,8 +1,9 @@
 import React, { Component } from "react"
-import { ActivityIndicator, FlatList, View, ScrollView } from "react-native"
+import { FlatList, View, ScrollView } from "react-native"
 import { connect } from "react-redux"
 
 import { getCodeItems } from "../../redux/modules/conduct"
+import Loader from "../../components/Loader"
 import About from "./About"
 import NavGradient from "../../components/Gradient"
 
@@ -21,7 +22,7 @@ class AboutContainer extends Component {
 
     render() {
         const { codeOfConduct, isLoading } = this.props
-        return isLoading ? <ActivityIndicator /> : <About data={codeOfConduct} />
+        return isLoading ? <Loader /> : <About data={codeOfConduct} />
     }
 }
 

@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { ActivityIndicator } from 'react-native'
 import Sessions from './Sessions'
 
 import NavGradient from '../../components/Gradient'
+import Loader from '../../components/Loader'
 import { getSpeaker } from '../../redux/modules/speaker'
 import { createFav, deleteFav } from '../../config/module'
 import { queryFavs, realm } from '../../config/module'
@@ -61,8 +61,9 @@ class SessionsContainer extends Component {
 
     render() {
         const { sessionData, navigation, isLoading, speaker } = this.props
+        console.log(this.faved)
         return isLoading ? 
-            <ActivityIndicator /> 
+            <Loader /> 
              :  <Sessions 
                     item={sessionData} 
                     navigatorUID={navigation} 
