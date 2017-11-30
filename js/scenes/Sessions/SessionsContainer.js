@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { connect } from 'react-redux'
-import { ActivityIndicator, ScrollView } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import Sessions from './Sessions'
 
 import NavGradient from '../../components/Gradient'
@@ -13,7 +13,6 @@ class SessionsContainer extends Component {
         navigationBar: {
             title(params) {return "Session"},
             tintColor: 'white',
-            visible: false,
             renderBackground: () => <NavGradient />
         }
     }

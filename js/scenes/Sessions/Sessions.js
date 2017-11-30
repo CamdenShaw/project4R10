@@ -1,6 +1,6 @@
 import React from 'react';
-import { Text, View, Image, TouchableHighlight } from 'react-native'
-import propTypes from 'prop-types'
+import { Text, View, Image, TouchableHighlight, ScrollView } from 'react-native'
+import PropTypes from 'prop-types'
 
 import MyHeaderText from '../../components/MyHeaderText'
 import MyAppText from '../../components/MyAppText'
@@ -12,9 +12,8 @@ import { colours } from '../../config/styles.js'
 
 const Sessions = ({item, navigatorUID, speaker, faved, dealWithFav, buttonText}) => {
     let id = item.session_id
-    console.log(item.location, faved)
     return (
-        <View style={styles.container} key={id}>
+        <ScrollView style={styles.container} key={id}>
             <Heart location={item.location} faved={faved} />
             <MyHeaderText>{item.title}</MyHeaderText>
             <Text>{timeConvert(item.start_time)}</Text>
@@ -32,7 +31,7 @@ const Sessions = ({item, navigatorUID, speaker, faved, dealWithFav, buttonText})
             }
             <View style={styles.separator} />
             <Button handlePress={dealWithFav} text={buttonText} />
-        </View>
+        </ScrollView>
     )
 }
 

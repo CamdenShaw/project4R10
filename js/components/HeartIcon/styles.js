@@ -1,7 +1,6 @@
-import { StyleSheet } from 'react-native'
 import { colours, typography } from '../../config/styles'
 
-export default StyleSheet.create({
+export default {
     heartContainer: {
         flex:1, 
         flexDirection: 'row', 
@@ -20,4 +19,4 @@ export default StyleSheet.create({
         paddingBottom: 5,
         paddingRight: 10
     }
-})
+}

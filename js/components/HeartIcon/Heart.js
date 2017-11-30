@@ -7,15 +7,15 @@ import styles from './styles'
 
 const Heart = ({location, faved}) => {
 
-    // let style = { display: 'none', ...styles.icon }
+    let style = { display: 'none', ...styles.icon }
 
-    // if(faved[0]) style = { display: 'flex', ...styles.icon }
+    if(faved[0]) style = { display: 'flex', ...styles.icon }
 
     return (
         <View style={styles.heartContainer}>
             <Text style={styles.text}>{location}</Text>
             <Icon 
-                style={styles.icon}
+                style={style}
                 size={17} 
                 name={Platform.OS === 'ios' ? "ios-heart" : "md-heart"} 
                 color={colours.red} 

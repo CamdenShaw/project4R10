@@ -12,9 +12,9 @@ class SpeakerContainer extends Component {
             title(params){return},
             visible: false,
         },
-        // styles: {
-        //         ...NavigationStyles.SlideVertical
-        // }
+        styles: {
+                ...NavigationStyles.SlideVertical
+        }
     }
 
     goBack = () => {
