@@ -8,6 +8,7 @@ import {
     UIManager,
     Animated,
     Easing } from 'react-native'
+import PropTypes from 'prop-types'
     
 import MyAppText from '../MyAppText'
 import styles from './styles'
@@ -140,6 +141,16 @@ class CodeItem extends Component {
             </View>
         );
     }
+}
+
+CodeItem.defaultProps = {
+    thisKey: '',
+    item: {}
+}
+
+CodeItem.propTypes = {
+    thisKey: PropTypes.string,
+    item: PropTypes.object
 }
 
 export default CodeItem;

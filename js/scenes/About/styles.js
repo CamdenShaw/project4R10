@@ -1,12 +1,12 @@
-import { StyleSheet } from 'react-native'
-import { colours, typography } from '../../config/styles'
+import { StyleSheet } from "react-native"
+import { colours, typography } from "../../config/styles"
 
 export default StyleSheet.create({
     image: {
         margin: 10,
         padding: 20,
-        width: 540/2.8,
-        height: 132/2.8,
+        width: 540 / 2.8,
+        height: 132 / 2.8,
         justifyContent: "center",
         alignSelf: "center"
     },
@@ -24,16 +24,16 @@ export default StyleSheet.create({
         marginTop: 7,
         marginBottom: 7,
         flex: 1,
-        flexDirection: 'row'
+        flexDirection: "row"
     },
     codeHeaderText: {
         fontFamily: typography.fontMain,
         paddingLeft: 3,
         fontSize: 16,
-        color: colours.purple,
+        color: colours.purple
     },
     codeIcon: {
-        textAlign: 'center',
+        textAlign: "center",
         fontFamily: typography.fontMain,
         color: colours.purple,
         fontSize: 18,

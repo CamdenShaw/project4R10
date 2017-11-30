@@ -1,9 +1,8 @@
 import React, { Component } from 'react';
-import { Text, View } from 'react-native'
+import { Text } from 'react-native'
 import { DrawerNavigation, DrawerNavigationItem as DrawerItem, StackNavigation} from '@expo/ex-navigation'
 import Icon from 'react-native-vector-icons/Ionicons'
 
-import MyAppText from '../components/MyAppText'
 import { colours, typography } from '../config/styles'
 import Router from './routes'
 

@@ -1,14 +1,14 @@
 // NAME YOUR ACTIONS
 const getCodeOfConductBegin = () => {
-    return { type: "GET_CODE_OF_CONDUCT_BEGIN"}
+    return { type: "GET_CODE_OF_CONDUCT_BEGIN" }
 }
-const getCodeOfConductSuccess = (items) => {
+const getCodeOfConductSuccess = items => {
     return {
         type: "GET_CODE_OF_CONDUCT_SUCCESS",
         items
-        }
+    }
 }
-const getCodeOfConductFail = (error) => {
+const getCodeOfConductFail = error => {
     return {
         type: "GET_CODE_OF_CONDUCT_FAIL",
         error
@@ -16,15 +16,15 @@ const getCodeOfConductFail = (error) => {
 }
 // CREATE SOME ACTION CREATORS
 export const getCodeItems = () => {
-    return (dispatch) => {
-        dispatch(getCodeOfConductBegin());
-        fetch('https://r10app-95fea.firebaseio.com/code_of_conduct.json')
+    return dispatch => {
+        dispatch(getCodeOfConductBegin())
+        fetch("https://r10app-95fea.firebaseio.com/code_of_conduct.json")
             .then(resp => resp.json())
             .then(items => {
                 dispatch(getCodeOfConductSuccess(items))
             })
             .catch(err => {
-                dispatch(getCodeOfConductSuccess(err))
+                dispatch(getCodeOfConductFail(err))
             })
     }
 }
@@ -36,19 +36,19 @@ const initialState = {
 }
 // CREATE AND EXPORT YOUR REDUCER
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case 'GET_CODE_OF_CONDUCT_BEGIN':
+    switch (action.type) {
+        case "GET_CODE_OF_CONDUCT_BEGIN":
             return {
                 ...state,
                 isLoading: true
             }
-        case 'GET_CODE_OF_CONDUCT_SUCCESS':
+        case "GET_CODE_OF_CONDUCT_SUCCESS":
             return {
                 ...state,
                 codeOfConduct: action.items,
                 isLoading: false
             }
-        case 'GET_CODE_OF_CONDUCT_FAIL':
+        case "GET_CODE_OF_CONDUCT_FAIL":
             return {
                 ...state,
                 error: action.error,

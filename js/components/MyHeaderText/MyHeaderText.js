@@ -1,15 +1,10 @@
-import React, { Component } from 'react';
-import { Text } from 'react-native'
+import React from "react"
+import { Text } from "react-native"
 
-import styles from './styles'
+import styles from "./styles"
 
-class MyHeaderText extends Component {
-    state = {  }
-    render() {
-        return (
-            <Text style={styles.header}>{this.props.children}</Text>
-        );
-    }
+const MyHeaderText = () => {
+    return <Text style={styles.header}>{this.props.children}</Text>
 }
 
-export default MyHeaderText;
+export default MyHeaderText

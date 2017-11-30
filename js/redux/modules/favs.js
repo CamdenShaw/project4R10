@@ -1,13 +1,13 @@
 const getFavsBegin = () => {
-    return { type: "GET_FAVS_BEGIN"}
+    return { type: "GET_FAVS_BEGIN" }
 }
-const getFavsSuccess = (items) => {
+const getFavsSuccess = items => {
     return {
         type: "GET_FAVS_SUCCESS",
         items
-        }
+    }
 }
-const getFavsFail = (error) => {
+const getFavsFail = error => {
     return {
         type: "GET_FAVS_FAIL",
         error
@@ -15,9 +15,9 @@ const getFavsFail = (error) => {
 }
 
 export const getFavs = () => {
-    return (dispatch) => {
+    return dispatch => {
         dispatch(getFavsBegin())
-        fetch('https://r10app-95fea.firebaseio.com/sessions.json')
+        fetch("https://r10app-95fea.firebaseio.com/sessions.json")
             .then(resp => resp.json())
             .then(items => {
                 dispatch(getFavsSuccess(items))
@@ -35,19 +35,19 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case 'GET_FAVS_BEGIN':
+    switch (action.type) {
+        case "GET_FAVS_BEGIN":
             return {
                 ...state,
                 isLoading: true
             }
-        case 'GET_FAVS_SUCCESS':
+        case "GET_FAVS_SUCCESS":
             return {
                 ...state,
                 Favs: action.items,
                 isLoading: false
             }
-        case 'GET_FAVS_FAIL':
+        case "GET_FAVS_FAIL":
             return {
                 ...state,
                 error: action.error,

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux'
-import { ActivityIndicator, ScrollView } from 'react-native'
+import { ActivityIndicator } from 'react-native'
 import PropTypes from 'prop-types'
 
 import Favs from './Favs'
@@ -47,13 +47,26 @@ class FavsContainer extends Component {
     }
 
     render() {
-        let { navigation, schedule, isLoading } = this.props
+        let { navigation, isLoading } = this.props
         return isLoading ?
             <ActivityIndicator /> 
              :  <Favs navigation={navigation} isLoading={isLoading} favs={formatSession(this.favs)} />
     }
 }
 
+FavsContainer.defaultProps = {
+    dispatch: () => 1-1,
+    schedule: [],
+    navigation: '',
+    isLoading: Boolean
+}
+
+FavsContainer.propTypes = {
+    dispatch: PropTypes.func,
+    schedule: PropTypes.array,
+    navigation: PropTypes.string,
+    isLoading: PropTypes.bool
+}
 
 const mapStateToProps = state => {
     return {

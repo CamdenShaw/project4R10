@@ -1,13 +1,13 @@
 const getSessionsBegin = () => {
-    return { type: "GET_SESSIONS_BEGIN"}
+    return { type: "GET_SESSIONS_BEGIN" }
 }
-const getSessionsSuccess = (items) => {
+const getSessionsSuccess = items => {
     return {
         type: "GET_SESSIONS_SUCCESS",
         items
-        }
+    }
 }
-const getSessionsFail = (error) => {
+const getSessionsFail = error => {
     return {
         type: "GET_SESSIONS_FAIL",
         error
@@ -15,11 +15,11 @@ const getSessionsFail = (error) => {
 }
 
 export const getSessions = () => {
-    return (dispatch) => {
+    return dispatch => {
         dispatch(getSessionsBegin())
-        fetch('https://r10app-95fea.firebaseio.com/sessions.json')
+        fetch("https://r10app-95fea.firebaseio.com/sessions.json")
             .then(resp => resp.json())
-            .then((data) => {
+            .then(data => {
                 dispatch(getSessionsSuccess(data))
             })
             .catch(err => {
@@ -35,19 +35,19 @@ const initialState = {
 }
 
 export default (state = initialState, action) => {
-    switch(action.type) {
-        case 'GET_SESSIONS_BEGIN':
+    switch (action.type) {
+        case "GET_SESSIONS_BEGIN":
             return {
                 ...state,
                 isLoading: true
             }
-        case 'GET_SESSIONS_SUCCESS':
+        case "GET_SESSIONS_SUCCESS":
             return {
                 ...state,
                 sessions: action.items,
                 isLoading: false
             }
-        case 'GET_SESSIONS_FAIL':
+        case "GET_SESSIONS_FAIL":
             return {
                 ...state,
                 error: action.error,

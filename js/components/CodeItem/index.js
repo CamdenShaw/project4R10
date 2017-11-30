@@ -1,3 +1,3 @@
-import CodeItem from './CodeItem'
+import CodeItem from "./CodeItem"
 
 export default CodeItem

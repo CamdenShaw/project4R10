@@ -1,11 +1,11 @@
-import { colours, typography } from '../../config/styles'
+import { colours, typography } from "../../config/styles"
 
 export default {
     heartContainer: {
-        flex:1, 
-        flexDirection: 'row', 
-        justifyContent: 'space-between',
-        marginTop: 10,
+        flex: 1,
+        flexDirection: "row",
+        justifyContent: "space-between",
+        marginTop: 10
     },
     text: {
         fontSize: 14,

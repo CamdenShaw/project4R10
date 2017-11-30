@@ -1,5 +1,5 @@
-import { StyleSheet } from 'react-native'
-import { typography } from '../../config/styles'
+import { StyleSheet } from "react-native"
+import { typography } from "../../config/styles"
 
 export default StyleSheet.create({
     button: {
@@ -9,14 +9,14 @@ export default StyleSheet.create({
         alignItems: "center"
     },
     buttonText: {
-        color: 'white',
+        color: "white",
         fontSize: 16,
-        textAlign: 'center',
+        textAlign: "center",
         fontFamily: typography.fontMain,
         padding: 10,
         paddingLeft: 20,
         paddingRight: 20,
-        backgroundColor: 'transparent'
+        backgroundColor: "transparent"
     },
     buttonGradient: {
         borderRadius: 30

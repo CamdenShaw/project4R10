@@ -1,19 +1,20 @@
-import React, { Component } from 'react'
-import { connect } from 'react-redux'
-import { ActivityIndicator, Linking } from 'react-native'
-import { NavigationStyles } from '@expo/ex-navigation'
+import React, { Component } from "react"
+import { connect } from "react-redux"
+import { ActivityIndicator, Linking } from "react-native"
+import { NavigationStyles } from "@expo/ex-navigation"
 
-import Speaker from './Speaker'
+import Speaker from "./Speaker"
 
 class SpeakerContainer extends Component {
-
     static route = {
-        navigationBar:{
-            title(params){return},
-            visible: false,
+        navigationBar: {
+            title(params) {
+                return
+            },
+            visible: false
         },
         styles: {
-                ...NavigationStyles.SlideVertical
+            ...NavigationStyles.SlideVertical
         }
     }
 
@@ -27,16 +28,16 @@ class SpeakerContainer extends Component {
 
     render() {
         let { isLoading, speakerData } = this.props
-        return isLoading ? 
-            <ActivityIndicator /> 
-             :  <Speaker wiki={this.wiki} speaker={speakerData} goBack={this.goBack} />
+        return isLoading ? (
+            <ActivityIndicator />
+        ) : (
+            <Speaker wiki={this.wiki} speaker={speakerData} goBack={this.goBack} />
+        )
     }
 }
 
-const mapStateToProps = state => (
-    {
-        isLoading: state.speaker.isLoading
-    }
-)
+const mapStateToProps = state => ({
+    isLoading: state.speaker.isLoading
+})
 
-export default connect(mapStateToProps)(SpeakerContainer);
+export default connect(mapStateToProps)(SpeakerContainer)

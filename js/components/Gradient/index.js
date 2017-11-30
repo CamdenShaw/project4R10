@@ -1,3 +1,3 @@
-import NavGradient from './NavGradient'
+import NavGradient from "./NavGradient"
 
 export default NavGradient

@@ -1,3 +1,3 @@
-import MyHeaderText from './MyHeaderText'
+import MyHeaderText from "./MyHeaderText"
 
 export default MyHeaderText

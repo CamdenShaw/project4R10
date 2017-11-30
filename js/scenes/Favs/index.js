@@ -1,3 +1,3 @@
-import FavsContainer from './FavsContainer'
+import FavsContainer from "./FavsContainer"
 
 export default FavsContainer

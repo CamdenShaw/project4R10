@@ -1,9 +1,9 @@
-import { StyleSheet } from 'react-native'
-import { colours, typography } from '../../config/styles'
+import { StyleSheet } from "react-native"
+import { colours, typography } from "../../config/styles"
 
 export default StyleSheet.create({
     separator: {
-        flex:1,
+        flex: 1,
         height: StyleSheet.hairlineWidth,
         backgroundColor: colours.lightGrey,
         marginTop: 1
@@ -16,7 +16,7 @@ export default StyleSheet.create({
         paddingLeft: 10
     },
     text: {
-        color: 'black',
+        color: "black",
         fontFamily: typography.fontMain,
         fontSize: 14,
         paddingTop: 10

@@ -1,3 +1,3 @@
-import Heart from './Heart'
+import Heart from "./Heart"
 
 export default Heart
